@@ -1,7 +1,5 @@
-import { Todo } from '../models/todo.js'
-import fetch from 'node-fetch'
 
-const API_URL = process.env.API_BASE_URL
+import { Todo } from '../models/todo.js'
 
 const create = async(req, res) => {
   req.body.userId = req.user.profile
