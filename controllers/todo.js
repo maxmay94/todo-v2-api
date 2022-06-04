@@ -15,10 +15,25 @@ const create = async(req, res) => {
 }
 
 const index = async(req, res) => {
+  try{
+    const todos = await Todo.find({})
+    return res.status(200).json(todos)
+  } catch(err) {
+    return res.status(500).json(err)
+  }
+}
 
+const deleteTodo = async(req, res) => {
+  try {
+    await Todo.findByIdAndDelete(req.params.id)
+    return res.status(204).end()
+  } catch(err) {
+    return res.status(500).json(err)
+  }
 }
  
 export {
   create,
-  index
+  index,
+  deleteTodo as delete
 }
