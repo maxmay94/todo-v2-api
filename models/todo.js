@@ -6,7 +6,7 @@ const todoSchema = new Schema(
   {
     userId: {
       type: Schema.Types.ObjectId,
-      ref: 'Profile'
+      ref: 'Profile',
     },
     title: {
       type: String,
