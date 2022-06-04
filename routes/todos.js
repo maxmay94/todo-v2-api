@@ -6,6 +6,7 @@ const router = Router()
 
 /* ------------------ Public Routes ------------------ */
 router.get('/', todoCtrl.index)
+router.patch('/:id/done', todoCtrl.markDone)
 
 
 /* ------------------ Private Routes ------------------ */
