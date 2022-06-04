@@ -31,9 +31,19 @@ const deleteTodo = async(req, res) => {
     return res.status(500).json(err)
   }
 }
+
+const update = async(req, res) => {
+  try {
+    const todo = await Todo.findByIdAndUpdate(req.params.id, req.body)
+    return res.status(201).json(todo)
+  } catch(err) {
+    return res.status(500).json(err)
+  }
+}
  
 export {
   create,
   index,
-  deleteTodo as delete
+  deleteTodo as delete,
+  update
 }
